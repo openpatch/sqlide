@@ -1,12 +1,13 @@
-let base = "https://sqlide.openpatch.org/";
+let base = "https://embed.learn-sql.de/include/";
 
 
 let scripts = [
     base + 'sql-ide-embedded.css',
+    base + "lib/jquery/jquery-3.3.1.js",
     base + "lib/pako/pako.js",
     base + "lib/zip.js/zip.min.js",
     base + "lib/sql.js/sql-wasm.js",
-    base + "lib/monaco-editor/dev/vs/loader.js"
+    base + "lib/monaco-editor/dev/vs/loader.js"    
 ];
 
 includeJsAndCss(scripts, () => {
@@ -15,7 +16,7 @@ includeJsAndCss(scripts, () => {
             $.ajax({
                 url: window.jo_doc,
                  type:"get",
-                 dataType:'text',
+                 dataType:'text',  
                  success: function(data){
                    initScripts(data);
                  },
@@ -26,8 +27,8 @@ includeJsAndCss(scripts, () => {
         } else {
             initScripts(window.jo_doc);
         }
-
-    };
+        
+    };    
 });
 
 
